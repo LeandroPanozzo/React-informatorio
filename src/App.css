@@ -1,0 +1,235 @@
+/* Reset y fuentes base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #121212;
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+/* Fondo principal - estilo Spotify limpio */
+.min-h-screen {
+  background: #121212;
+  position: relative;
+}
+
+/* Navbar mejorada - estilo Spotify oscuro */
+nav {
+  background: #000000 !important;
+  border-bottom: 1px solid #282828;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 24px !important;
+}
+
+nav h1 {
+  color: #1db954 !important;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+nav button {
+  color: #b3b3b3;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+nav button:hover {
+  color: #ffffff;
+}
+
+/* Contenedores de secciones - estilo Spotify limpio */
+.p-6.bg-gray-900 {
+  background: #181818 !important;
+  border-radius: 8px;
+  padding: 24px !important;
+  margin-bottom: 32px;
+  border: none;
+}
+
+.p-6.bg-gray-900:hover {
+  background: #181818 !important;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Títulos de sección - estilo Spotify */
+.text-xl.font-semibold {
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.text-xl.font-semibold::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 32px;
+  height: 4px;
+  background: #1db954;
+  border-radius: 2px;
+}
+
+/* Cards de canciones - estilo Spotify minimalista */
+.flex.items-center.p-3 {
+  background: transparent !important;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px !important;
+  transition: background-color 0.2s ease;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.flex.items-center.p-3:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.space-y-3 > * + * {
+  margin-top: 0px !important;
+}
+
+/* Imágenes de portada - estilo Spotify */
+.w-12.h-12 {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 4px !important;
+  box-shadow: none;
+  transition: none;
+  background: #333333;
+}
+
+.flex.items-center.p-3:hover .w-12.h-12 {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Texto de canciones - estilo Spotify */
+.text-white.font-medium {
+  color: #ffffff !important;
+  font-weight: 400 !important;
+  font-size: 16px;
+  transition: none;
+}
+
+.flex.items-center.p-3:hover .text-white.font-medium {
+  color: #ffffff !important;
+}
+
+.text-gray-400 {
+  color: #b3b3b3 !important;
+  font-size: 14px;
+  transition: none;
+}
+
+.flex.items-center.p-3:hover .text-gray-400 {
+  color: #b3b3b3 !important;
+}
+
+/* Duración de la canción */
+.text-gray-400.text-sm {
+  color: #b3b3b3 !important;
+  font-size: 14px;
+}
+
+/* Botón de play - oculto por defecto, aparece en hover */
+.bg-green-500 {
+  background: #1db954 !important;
+  border: none;
+  box-shadow: none;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: visible;
+  opacity: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-green-500::before {
+  display: none;
+}
+
+.bg-green-500:hover {
+  background: #1ed760 !important;
+  transform: scale(1.04) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.bg-green-500:hover::before {
+  display: none;
+}
+
+.bg-green-500 svg {
+  position: relative;
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+}
+
+/* Mostrar botón de play solo en hover del card */
+.flex.items-center.p-3:hover .bg-green-500 {
+  opacity: 1;
+}
+
+/* Eliminar animaciones innecesarias */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #535353;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #727272;
+}
+
+/* Efectos de selección */
+::selection {
+  background: rgba(29, 185, 84, 0.3);
+  color: white;
+}
+
+/* Layout principal */
+.p-6 {
+  padding: 24px !important;
+}
