@@ -1,6 +1,6 @@
 import type React from "react"
 import './App.css'
-// Tipos TypeScript
+// tipos 
 type Song = {
   id: string
   title: string
@@ -22,7 +22,7 @@ type NavbarProps = {
   title: string
 }
 
-// Datos mockeados - 4 listas con más de 7 ítems en total
+// datos mockeados
 const popularSongs: Song[] = [
   {
     id: "1",
@@ -91,23 +91,23 @@ const jazzSongs: Song[] = [
   },
 ]
 
-// Componente Navbar reutilizable
+// componente navbar
 const Navbar: React.FC<NavbarProps> = ({ title }) => {
   return (
     <nav className="bg-black text-white p-4 shadow-lg">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold text-green-400">{title}</h1>
         <div className="flex space-x-4">
-          <button className="hover:text-green-400 transition-colors">Home</button>
-          <button className="hover:text-green-400 transition-colors">Search</button>
-          <button className="hover:text-green-400 transition-colors">Library</button>
+          <button className="hover:text-green-400 transition-colors">Inicio</button>
+          <button className="hover:text-green-400 transition-colors">Buscar</button>
+          <button className="hover:text-green-400 transition-colors">Biblioteca</button>
         </div>
       </div>
     </nav>
   )
 }
 
-// Componente Container genérico reutilizable con children
+// componente container
 const Container: React.FC<ContainerProps> = ({ children, title }) => {
   return (
     <div className="p-6 bg-gray-900 rounded-lg mb-6">
@@ -117,7 +117,7 @@ const Container: React.FC<ContainerProps> = ({ children, title }) => {
   )
 }
 
-// Componente individual para cada canción
+// componente individual
 const SongCard: React.FC<SongCardProps> = ({ song }) => {
   return (
     <div className="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors group">
@@ -142,36 +142,36 @@ const SongCard: React.FC<SongCardProps> = ({ song }) => {
   )
 }
 
-// Componente principal App
+// componentes
 const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-black">
-      <Navbar title="MusicApp" />
+      <Navbar title="Spotify" />
 
       <div className="p-6">
-        {/* Lista 1: Canciones Populares */}
-        <Container title="🔥 Canciones Populares">
+        {/* lista 1: canciones populares */}
+        <Container title=" Canciones populares">
           {popularSongs.map((song) => (
             <SongCard key={song.id} song={song} />
           ))}
         </Container>
 
-        {/* Lista 2: Rock Clásico */}
-        <Container title="🎸 Rock Clásico">
+        {/* lista 2 */}
+        <Container title=" Rock clasico">
           {rockSongs.map((song) => (
             <SongCard key={song.id} song={song} />
           ))}
         </Container>
 
-        {/* Lista 3: Pop Hits */}
-        <Container title="✨ Pop Hits">
+        {/* lista 3*/}
+        <Container title=" Pop">
           {popSongs.map((song) => (
             <SongCard key={song.id} song={song} />
           ))}
         </Container>
 
-        {/* Lista 4: Jazz Essentials */}
-        <Container title="🎷 Jazz Essentials">
+        {/* lista 4 */}
+        <Container title=" jazz">
           {jazzSongs.map((song) => (
             <SongCard key={song.id} song={song} />
           ))}

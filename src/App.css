@@ -1,4 +1,4 @@
-/* Reset y fuentes base */
+/*fuentes*/
 * {
   margin: 0;
   padding: 0;
@@ -12,13 +12,13 @@ body {
   color: #ffffff;
 }
 
-/* Fondo principal - estilo Spotify limpio */
+/* fondo principal  */
 .min-h-screen {
   background: #121212;
   position: relative;
 }
 
-/* Navbar mejorada - estilo Spotify oscuro */
+/* navbar*/
 nav {
   background: #000000 !important;
   border-bottom: 1px solid #282828;
@@ -51,7 +51,7 @@ nav button:hover {
   color: #ffffff;
 }
 
-/* Contenedores de secciones - estilo Spotify limpio */
+/* contenedores de seciones */
 .p-6.bg-gray-900 {
   background: #181818 !important;
   border-radius: 8px;
@@ -66,7 +66,7 @@ nav button:hover {
   box-shadow: none;
 }
 
-/* Títulos de sección - estilo Spotify */
+/* titulos de seccioin*/
 .text-xl.font-semibold {
   color: #ffffff !important;
   font-weight: 700;
@@ -86,7 +86,7 @@ nav button:hover {
   border-radius: 2px;
 }
 
-/* Cards de canciones - estilo Spotify minimalista */
+/* cards de cancionesç*/
 .flex.items-center.p-3 {
   background: transparent !important;
   border: none;
@@ -108,7 +108,7 @@ nav button:hover {
   margin-top: 0px !important;
 }
 
-/* Imágenes de portada - estilo Spotify */
+/* imagenes de portada*/
 .w-12.h-12 {
   width: 40px !important;
   height: 40px !important;
@@ -123,7 +123,7 @@ nav button:hover {
   box-shadow: none;
 }
 
-/* Texto de canciones - estilo Spotify */
+/* texto de canciones */
 .text-white.font-medium {
   color: #ffffff !important;
   font-weight: 400 !important;
@@ -145,13 +145,13 @@ nav button:hover {
   color: #b3b3b3 !important;
 }
 
-/* Duración de la canción */
+/* duracion */
 .text-gray-400.text-sm {
   color: #b3b3b3 !important;
   font-size: 14px;
 }
 
-/* Botón de play - oculto por defecto, aparece en hover */
+/* boton de play oculto*/
 .bg-green-500 {
   background: #1db954 !important;
   border: none;
@@ -188,24 +188,12 @@ nav button:hover {
   height: 14px;
 }
 
-/* Mostrar botón de play solo en hover del card */
+/*  boton de play */
 .flex.items-center.p-3:hover .bg-green-500 {
   opacity: 1;
 }
 
-/* Eliminar animaciones innecesarias */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Scrollbar personalizada */
+/* scrolbar */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -223,13 +211,13 @@ nav button:hover {
   background: #727272;
 }
 
-/* Efectos de selección */
+/* ffectos de seleccion */
 ::selection {
   background: rgba(29, 185, 84, 0.3);
   color: white;
 }
 
-/* Layout principal */
+/* layout principal */
 .p-6 {
   padding: 24px !important;
 }
