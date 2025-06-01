@@ -52,3 +52,4 @@ export default tseslint.config({
   },
 })
 ```
+Entrega 1 - Leandro Panozzo
