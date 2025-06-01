@@ -1,5 +1,6 @@
 import type React from "react"
 import './App.css'
+
 // tipos 
 type Song = {
   id: string
@@ -22,6 +23,9 @@ type NavbarProps = {
   title: string
 }
 
+// imagen por defecto
+const DEFAULT_COVER = "https://cdn-icons-png.flaticon.com/512/557/557098.png"
+
 // datos mockeados
 const popularSongs: Song[] = [
   {
@@ -29,14 +33,14 @@ const popularSongs: Song[] = [
     title: "Blinding Lights",
     artist: "The Weeknd",
     duration: "3:20",
-    cover: "/placeholder.svg?height=60&width=60",
+    cover: "",
   },
   {
     id: "2",
     title: "Shape of You",
     artist: "Ed Sheeran",
     duration: "3:53",
-    cover: "/placeholder.svg?height=60&width=60",
+    cover: "",
   },
 ]
 
@@ -46,14 +50,14 @@ const rockSongs: Song[] = [
     title: "Bohemian Rhapsody",
     artist: "Queen",
     duration: "5:55",
-    cover: "/placeholder.svg?height=60&width=60",
+    cover: "",
   },
   {
     id: "4",
     title: "Stairway to Heaven",
     artist: "Led Zeppelin",
     duration: "8:02",
-    cover: "/placeholder.svg?height=60&width=60",
+    cover: "",
   },
 ]
 
@@ -63,14 +67,14 @@ const popSongs: Song[] = [
     title: "Anti-Hero",
     artist: "Taylor Swift",
     duration: "3:20",
-    cover: "/placeholder.svg?height=60&width=60",
+    cover: "",
   },
   {
     id: "6",
     title: "As It Was",
     artist: "Harry Styles",
     duration: "2:47",
-    cover: "/placeholder.svg?height=60&width=60",
+    cover: "",
   },
 ]
 
@@ -80,14 +84,14 @@ const jazzSongs: Song[] = [
     title: "Take Five",
     artist: "Dave Brubeck",
     duration: "5:24",
-    cover: "/placeholder.svg?height=60&width=60",
+    cover: "",
   },
   {
     id: "8",
     title: "Fly Me to the Moon",
     artist: "Frank Sinatra",
     duration: "2:28",
-    cover: "/placeholder.svg?height=60&width=60",
+    cover: "",
   },
 ]
 
@@ -121,7 +125,11 @@ const Container: React.FC<ContainerProps> = ({ children, title }) => {
 const SongCard: React.FC<SongCardProps> = ({ song }) => {
   return (
     <div className="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors group">
-      <img src={song.cover || "/placeholder.svg"} alt={`${song.title} cover`} className="w-12 h-12 rounded-md mr-4" />
+      <img
+        src={song.cover?.trim() || DEFAULT_COVER}
+        alt={`${song.title} cover`}
+        className="w-12 h-12 rounded-md mr-4"
+      />
       <div className="flex-1">
         <h3 className="text-white font-medium">{song.title}</h3>
         <p className="text-gray-400 text-sm">{song.artist}</p>
@@ -142,36 +150,32 @@ const SongCard: React.FC<SongCardProps> = ({ song }) => {
   )
 }
 
-// componentes
+// componente principal
 const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-black">
       <Navbar title="Spotify" />
 
       <div className="p-6">
-        {/* lista 1: canciones populares */}
-        <Container title=" Canciones populares">
+        <Container title="Canciones populares">
           {popularSongs.map((song) => (
             <SongCard key={song.id} song={song} />
           ))}
         </Container>
 
-        {/* lista 2 */}
-        <Container title=" Rock clasico">
+        <Container title="Rock clásico">
           {rockSongs.map((song) => (
             <SongCard key={song.id} song={song} />
           ))}
         </Container>
 
-        {/* lista 3*/}
-        <Container title=" Pop">
+        <Container title="Pop">
           {popSongs.map((song) => (
             <SongCard key={song.id} song={song} />
           ))}
         </Container>
 
-        {/* lista 4 */}
-        <Container title=" jazz">
+        <Container title="Jazz">
           {jazzSongs.map((song) => (
             <SongCard key={song.id} song={song} />
           ))}
